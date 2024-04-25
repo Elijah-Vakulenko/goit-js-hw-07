@@ -32,9 +32,6 @@ const images = [
   }
 ];
 
-// мне нужно перебрать массив обьектов images и из  каждого элемента массива создать элемент списка gallery
-
-
 const gallery = document.querySelector(".gallery");
 
 images.forEach(obj => {

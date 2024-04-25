@@ -12,11 +12,6 @@
 
 
 const list = document.querySelector("#categories");
-console.log(list);
-
-
-
-
 
 const items = document.querySelectorAll(".item");
-console.log(items);
+console.log(`Number of categories: ${items.length}`);
