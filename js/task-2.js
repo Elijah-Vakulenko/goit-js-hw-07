@@ -5,7 +5,6 @@
 // Усі елементи галереї повинні додаватися в DOM за одну операцію додавання.
 // Додай мінімальне оформлення галереї флексбоксами через CSS класи.
 
-
 const images = [
   {
     url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260",
@@ -32,3 +31,23 @@ const images = [
     alt: "Lighthouse Coast Sea",
   }
 ];
+
+// мне нужно перебрать массив обьектов images и из  каждого элемента массива создать элемент списка gallery
+
+
+const gallery = document.querySelector(".gallery");
+
+images.forEach(obj => {
+  const item = document.createElement("li");
+
+  const image = document.createElement("img");
+  image.src = obj.url;
+  image.alt = obj.alt;
+  image.height = 150;
+
+  item.appendChild(image);
+
+  gallery.appendChild(item);
+})
+
+console.log(gallery);
