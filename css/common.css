@@ -41,3 +41,7 @@ ul {
   flex-direction: column;
   align-items: center;
 }
+
+.boxes div {
+  border: 1px solid black;
+}
