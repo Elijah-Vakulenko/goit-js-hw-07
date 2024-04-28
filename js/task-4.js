@@ -13,3 +13,37 @@
 // При сабміті в консоль виводиться об’єкт з двома властивостями, де ключі — це ім’я інпутів, а значення — відповідні значення цих інпутів, очищені від пробілів по краях
 // Після сабміту елементи форми очищаються
 
+
+
+const loginForm = document.querySelector(".login-form");
+
+const inputs = document.querySelectorAll("input");
+
+const btn = document.querySelector("button");
+
+loginForm.addEventListener("submit", handleSubmit);
+
+
+function handleSubmit(event) {
+    
+    event.preventDefault();
+
+    let filledForm = true;
+
+    inputs.forEach(input => {
+        const trimmedInput = input.value.trim();
+        if (trimmedInput === "") {
+            filledForm = false;
+            alert("All form fields must be filled in");
+        } 
+    })
+
+    const elements = event.currentTarget.elements;
+    
+    const loginInfo = {};
+    loginInfo.email = elements.email.value;
+    loginInfo.password = elements.email.value;
+    console.log(loginInfo);
+
+    loginForm.reset();
+};
