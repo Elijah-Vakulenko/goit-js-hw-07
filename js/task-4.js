@@ -21,6 +21,8 @@ const inputs = document.querySelectorAll("input");
 
 const btn = document.querySelector("button");
 
+btn.classList.toggle("change-color");
+
 loginForm.addEventListener("submit", handleSubmit);
 
 

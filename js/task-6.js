@@ -41,6 +41,8 @@ const destroyBtn = document.querySelector("[data-destroy]");
 const divBoxes = document.querySelector("#boxes");
 
 divBoxes.classList.toggle("boxes");
+createBtn.classList.toggle("change-color");
+destroyBtn.classList.toggle("red-btn");
 
 createBtn.addEventListener("click", createBoxes);
 
