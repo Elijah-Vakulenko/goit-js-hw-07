@@ -9,3 +9,15 @@
 // Під час набору тексту в інпуті його поточне значення підставляється в span#name-output як ім’я для привітання
 // Значення в інпуті очищене від пробілів по краях
 // Якщо інпут порожній або містить лише пробіли, то замість імені у спан має підставлятися рядок "Anonymous"
+
+const inpt = document.querySelector("#name-input")
+
+const output = document.querySelector("#name-output")
+
+inpt.addEventListener("input", () => {
+   if (inpt.value.trim() === "") {
+        output.textContent = "Anonymous";
+    } else {
+        output.textContent = inpt.value;
+    }
+});
