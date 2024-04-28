@@ -14,10 +14,20 @@ const inpt = document.querySelector("#name-input")
 
 const output = document.querySelector("#name-output")
 
-inpt.addEventListener("input", () => {
+// inpt.addEventListener("input", () => {
+//    if (inpt.value.trim() === "") {
+//         output.textContent = "Anonymous";
+//     } else {
+//         output.textContent = inpt.value;
+//     }
+// });
+
+inpt.addEventListener("input", inputFilling);
+
+function inputFilling () {
    if (inpt.value.trim() === "") {
         output.textContent = "Anonymous";
     } else {
         output.textContent = inpt.value;
     }
-});
+}
