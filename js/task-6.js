@@ -44,30 +44,26 @@ divBoxes.classList.toggle("boxes");
 createBtn.classList.toggle("change-color");
 destroyBtn.classList.toggle("red-btn");
 
-createBtn.addEventListener("click", createBoxes);
+createBtn.addEventListener("click", () => {
+  const amount = parseInt(inputField.value);
+  if (amount >= 1 && amount <= 100) {
+    createBoxes(amount);
+  }
+  });
 
 destroyBtn.addEventListener("click", destroyBoxes);
 
-createBoxes(inputField.value);
-
 function createBoxes(amount) {
-
-  if (inputField.value > 1 && inputField.value <= 100) {
-    let boxSize = 30;
-    for (let i = 0; i < inputField.value; i++) {
-      const box = document.createElement("div");
-      box.style.width = `${boxSize}px`;
-      box.style.height = `${boxSize}px`;
-      box.style.marginTop = `3px`;
-      boxSize += 10;
-      box.style.backgroundColor = getRandomHexColor();
-      divBoxes.appendChild(box);
-    } 
-    
-    inputField.value = "";
+  let boxSize = 30;
+  let boxCollection = " ";
+  for (let i = 0; i < amount; i++) {
+    const color = getRandomHexColor();
+    boxCollection += `<div style="width:${boxSize}px; height:${boxSize}px; margin-top:3px; background-color:${color};"></div>`;
+    boxSize += 10;
   }
-}
+  divBoxes.insertAdjacentHTML('beforeend', boxCollection);
+};
 
 function destroyBoxes() {
   divBoxes.innerHTML = "";
-}
+};

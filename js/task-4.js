@@ -44,7 +44,7 @@ function handleSubmit(event) {
     
     const loginInfo = {};
     loginInfo.email = elements.email.value;
-    loginInfo.password = elements.email.value;
+    loginInfo.password = elements.password.value;
     console.log(loginInfo);
 
     loginForm.reset();

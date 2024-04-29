@@ -34,17 +34,24 @@ const images = [
 
 const gallery = document.querySelector(".gallery");
 
-images.forEach(obj => {
-  const item = document.createElement("li");
 
-  const image = document.createElement("img");
-  image.src = obj.url;
-  image.alt = obj.alt;
-  image.height = 150;
+const imagesImport = images.map(function (image) {
+  return `<li><img src="${image.url}" alt="${image.alt}" height="150"> </li>`
+});
 
-  item.appendChild(image);
+const imageCollection = `${imagesImport.join('')}`;
+gallery.innerHTML = imageCollection;
 
-  gallery.appendChild(item);
-})
+// images.forEach(obj => {
+//   const item = document.createElement("li");
 
-console.log(gallery);
+//   const image = document.createElement("img");
+//   image.src = obj.url;
+//   image.alt = obj.alt;
+//   image.height = 150;
+
+//   item.appendChild(image);
+
+//   gallery.appendChild(item);
+// })
+
